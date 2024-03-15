@@ -1,4 +1,5 @@
 ﻿using Library_Terminal;
+using System.Collections.Generic;
 using System.Reflection.Metadata.Ecma335;
 using static System.Reflection.Metadata.BlobBuilder;
 
@@ -31,6 +32,8 @@ while (true)
     Console.WriteLine("1. Display list of books");
     Console.WriteLine("2. Search for a book by author");
     Console.WriteLine("3. Search for a book by title keyword");
+    Console.WriteLine("4. Return a book");
+    Console.WriteLine("5. Check a book out");
     int userSelection = 0;
     if (!int.TryParse(Console.ReadLine(), out userSelection))
     {
@@ -41,7 +44,7 @@ while (true)
     switch (userSelection)
     {
         case 1:
-            Console.WriteLine();
+            BookList(bookList);
             break;
                 case 2:
             Console.WriteLine();
@@ -49,19 +52,59 @@ while (true)
                 case 3:
             Console.WriteLine();
             break;
-        default:
+        case 4:
             Console.WriteLine();
+            break;
+        case 5:
+            Console.WriteLine();
+            break;
+        default:
+            Console.WriteLine("Please enter a valid number option");
             break;
     }
 
 
 }
 
-static  void BookList()
+
+static void BookList(List<Book> bookList)
 {
+    foreach (Book book in bookList)
+    {
+        Console.WriteLine($"{book.Title}");
+        Console.WriteLine(book.Author);
+        Console.WriteLine();
+    }
+}
+
+static void CheckOutBook(List<Book> bookList, string title, string displayDate)
+{
+    Console.WriteLine("Please enter the title of the book you'd like to checkout:");
+    title = Console.ReadLine();
+
     foreach (var book in bookList)
     {
-        Console.WriteLine(book.Title, book.Author);
+        if (book.Title == title.ToLower().Trim())
+        {
+            Console.WriteLine(book.Title, book.Author, book.Status);
+            if (book.Status == "on shelf")
+            {
+                book.Status = "checked out";
+                Console.WriteLine($"You've checkout out {title}. The book is due {displayDate}");
+            }
+            else if (book.Status == "checked out")
+            {
+                Console.WriteLine($"You've checkout out {title}. The book is will be available {displayDate} at the earliest");
+            }
+            else
+            {
+                Console.WriteLine("There are no books that contain that keyword in the library's database.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("There are no books with that title in the library's database.");
+        }
     }
 }
 
