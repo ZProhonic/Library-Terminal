@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Library Terminal")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8cfb32ab61e1d70f65627d7e3d664a323cab742f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+29bc087f6b2e01cf9825c44d5a12b1706aa4fd56")]
 [assembly: System.Reflection.AssemblyProductAttribute("Library Terminal")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Library Terminal")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
