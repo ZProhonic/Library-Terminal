@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Reflection.Metadata.Ecma335;
 using static System.Reflection.Metadata.BlobBuilder;
 
+int userSelection = 0;
 DateTime today = DateTime.Today;
 DateTime twoWeeksFromToday = today.AddDays(14);
 string displayDate = twoWeeksFromToday.ToString("yyyy-MM-dd");
@@ -40,9 +41,6 @@ while (true)
     Console.WriteLine("4. Return a book");
     Console.WriteLine("5. Check a book out");
 
-
-    int userSelection = 0;
-
     if (!int.TryParse(Console.ReadLine(), out userSelection))
     {
         Console.WriteLine("Please enter a valid number from our Catalog Menu");
@@ -55,16 +53,16 @@ while (true)
             BookList(bookList);
             break;
         case 2:
-            // Console.WriteLine();
             SearchByAuthor(bookList, author);
             break;
         case 3:
-            // Console.WriteLine();
             SearchByKeyword(bookList, keyword);
             break;
         case 4:
-            // Console.WriteLine();
             ReturnBook(bookList, title, displayDate);
+            break;
+        case 5:
+            CheckOutBook(bookList, title, displayDate);
             break;
         default:
             Console.WriteLine("Invalid selection, exiting application.");
