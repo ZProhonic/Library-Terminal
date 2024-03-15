@@ -1,10 +1,7 @@
 ﻿using Library_Terminal;
-<<<<<<< HEAD
 using System;
 using System.Net.NetworkInformation;
-=======
 using System.Collections.Generic;
->>>>>>> 27e10099be06b9d63fda20b4523ddbd24c7db7b7
 using System.Reflection.Metadata.Ecma335;
 using static System.Reflection.Metadata.BlobBuilder;
 
@@ -41,10 +38,9 @@ while (true)
     Console.WriteLine("2. Search for a book by author");
     Console.WriteLine("3. Search for a book by title keyword");
     Console.WriteLine("4. Return a book");
-<<<<<<< HEAD
-=======
     Console.WriteLine("5. Check a book out");
->>>>>>> 27e10099be06b9d63fda20b4523ddbd24c7db7b7
+
+
     int userSelection = 0;
 
     if (!int.TryParse(Console.ReadLine(), out userSelection))
@@ -56,10 +52,6 @@ while (true)
     switch (userSelection)
     {
         case 1:
-<<<<<<< HEAD
-            // Console.WriteLine();
-=======
->>>>>>> 27e10099be06b9d63fda20b4523ddbd24c7db7b7
             BookList(bookList);
             break;
         case 2:
@@ -74,32 +66,17 @@ while (true)
             // Console.WriteLine();
             ReturnBook(bookList, title, displayDate);
             break;
-<<<<<<< HEAD
         default:
             Console.WriteLine("Invalid selection, exiting application.");
-=======
-        case 4:
-            Console.WriteLine();
->>>>>>> 27e10099be06b9d63fda20b4523ddbd24c7db7b7
-            break;
-        case 5:
-            Console.WriteLine();
-            break;
-        default:
-            Console.WriteLine("Please enter a valid number option");
             break;
     }
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 27e10099be06b9d63fda20b4523ddbd24c7db7b7
 static void BookList(List<Book> bookList)
 {
     foreach (Book book in bookList)
     {
-        Console.WriteLine($"{book.Title}");
+        Console.WriteLine(book.Title);
         Console.WriteLine(book.Author);
         Console.WriteLine();
     }
@@ -112,11 +89,6 @@ static void CheckOutBook(List<Book> bookList, string title, string displayDate)
 
     foreach (var book in bookList)
     {
-<<<<<<< HEAD
-        Console.WriteLine(book.Title);
-        Console.WriteLine(book.Author);
-        Console.WriteLine();
-=======
         if (book.Title == title.ToLower().Trim())
         {
             Console.WriteLine(book.Title, book.Author, book.Status);
@@ -138,7 +110,6 @@ static void CheckOutBook(List<Book> bookList, string title, string displayDate)
         {
             Console.WriteLine("There are no books with that title in the library's database.");
         }
->>>>>>> 27e10099be06b9d63fda20b4523ddbd24c7db7b7
     }
 }
 
