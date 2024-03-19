@@ -40,6 +40,7 @@ while (true)
     Console.WriteLine("3. Search for a book by title keyword");
     Console.WriteLine("4. Return a book");
     Console.WriteLine("5. Check a book out");
+    Console.WriteLine("6. Exit Application");
 
     if (!int.TryParse(Console.ReadLine(), out userSelection))
     {
@@ -62,7 +63,10 @@ while (true)
             ReturnBook(bookList, title, displayDate);
             break;
         case 5:
-            CheckOutBook(bookList, title, displayDate);
+            CheckOutBook(bookList, displayDate);
+            break;
+        case 6:
+            Environment.Exit(0);
             break;
         default:
             Console.WriteLine("Invalid selection, exiting application.");
@@ -80,34 +84,23 @@ static void BookList(List<Book> bookList)
     }
 }
 
-static void CheckOutBook(List<Book> bookList, string title, string displayDate)
+static void CheckOutBook(List<Book> bookList, string displayDate)
 {
     Console.WriteLine("Please enter the title of the book you'd like to checkout:");
-    title = Console.ReadLine();
+    string title = Console.ReadLine();
+    var checkOutBook = bookList.FirstOrDefault(x => x.Title.ToLower().Trim() == title.ToLower().Trim());
 
-    foreach (var book in bookList)
+    if (checkOutBook.Status == "on shelf")
     {
-        if (book.Title == title.ToLower().Trim())
-        {
-            Console.WriteLine(book.Title, book.Author, book.Status);
-            if (book.Status == "on shelf")
-            {
-                book.Status = "checked out";
-                Console.WriteLine($"You've checkout out {title}. The book is due {displayDate}");
-            }
-            else if (book.Status == "checked out")
-            {
-                Console.WriteLine($"You've checkout out {title}. The book is will be available {displayDate} at the earliest");
-            }
-            else
-            {
-                Console.WriteLine("There are no books that contain that keyword in the library's database.");
-            }
-        }
-        else
-        {
-            Console.WriteLine("There are no books with that title in the library's database.");
-        }
+        Console.WriteLine($"You've checkout out {title}. The book is due {displayDate}");
+    }
+    else if (checkOutBook.Status == "checked out")
+    {
+        Console.WriteLine("Sorry, this book is currently checked out.");
+    }
+    else
+    {
+        Console.WriteLine("No book of this name in the library catalog");
     }
 }
 
@@ -180,8 +173,3 @@ static void ReturnBook(List<Book> bookList, string title, string displayDate)
         }
     }
 }
-
-//use linq to search List by usersearch. List<Book> userPick = books.Where(x => x.Author.ToLower().Trim() == userSearch).ToList();
-//List<Book> userPick = books.Where(x => x.Title.ToLower().Trim() == userSearch).ToList();
-// loop through books to select desired outcome: foreach (Book book in userPick) { Console.WriteLine(book.Author) }
-//foreach (Book book in userPick) { Console.WriteLine(book.Title) }
