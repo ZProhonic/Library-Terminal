@@ -18,7 +18,6 @@ namespace Library_Terminal
             Title = title;
             Author = author;
             Status = status;
-            DueDate = DateTime.MinValue;
         }
     }
 }
