@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Library_Terminal
-build_property.ProjectDir = C:\Users\MattieD\source\repos\Library-Terminal\Library Terminal\
+build_property.ProjectDir = C:\Users\zackp\source\repos\Library Terminal\Library Terminal\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

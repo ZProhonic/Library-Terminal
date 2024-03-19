@@ -14,11 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Library Terminal")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b4c66cef0c4df0fcaa8542039f4b005ca443916c")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7e1166777a9b052fd3ab6ac5081924d050ce5b04")]
->>>>>>> master
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+20fadff59196048ac4afcfe82227b67939818c2a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Library Terminal")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Library Terminal")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -40,12 +40,8 @@ while (true)
     Console.WriteLine("3. Search for a book by title keyword");
     Console.WriteLine("4. Return a book");
     Console.WriteLine("5. Check a book out");
-<<<<<<< HEAD
     Console.WriteLine("6. Exit Application");
-    int userSelection = 0;
-=======
 
->>>>>>> master
     if (!int.TryParse(Console.ReadLine(), out userSelection))
     {
         Console.WriteLine("Please enter a valid number from our Catalog Menu");
@@ -58,30 +54,19 @@ while (true)
             BookList(bookList);
             break;
         case 2:
-<<<<<<< HEAD
-            Console.WriteLine();
-            break;
-        case 3:
-            Console.WriteLine();
-=======
             SearchByAuthor(bookList, author);
             break;
         case 3:
             SearchByKeyword(bookList, keyword);
->>>>>>> master
             break;
         case 4:
             ReturnBook(bookList, title, displayDate);
             break;
         case 5:
-<<<<<<< HEAD
             CheckOutBook(bookList, displayDate);
             break;
         case 6:
             Environment.Exit(0);
-=======
-            CheckOutBook(bookList, title, displayDate);
->>>>>>> master
             break;
         default:
             Console.WriteLine("Invalid selection, exiting application.");
@@ -188,13 +173,3 @@ static void ReturnBook(List<Book> bookList, string title, string displayDate)
         }
     }
 }
-
-<<<<<<< HEAD
-
-
-=======
-//use linq to search List by usersearch. List<Book> userPick = books.Where(x => x.Author.ToLower().Trim() == userSearch).ToList();
-//List<Book> userPick = books.Where(x => x.Title.ToLower().Trim() == userSearch).ToList();
-// loop through books to select desired outcome: foreach (Book book in userPick) { Console.WriteLine(book.Author) }
-//foreach (Book book in userPick) { Console.WriteLine(book.Title) }
->>>>>>> master
