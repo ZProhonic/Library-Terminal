@@ -51,18 +51,23 @@ while (true)
     switch (userSelection)
     {
         case 1:
+            //Working
             BookList(bookList);
             break;
         case 2:
+            //Working
             SearchByAuthor(bookList, author);
             break;
         case 3:
+            //Working
             SearchByKeyword(bookList, keyword);
             break;
         case 4:
+            //FIX ME
             ReturnBook(bookList, title, displayDate);
             break;
         case 5:
+            //Working
             CheckOutBook(bookList, displayDate);
             break;
         case 6:
@@ -80,6 +85,7 @@ static void BookList(List<Book> bookList)
     {
         Console.WriteLine(book.Title);
         Console.WriteLine(book.Author);
+        Console.WriteLine(book.Status);
         Console.WriteLine();
     }
 }
@@ -93,14 +99,18 @@ static void CheckOutBook(List<Book> bookList, string displayDate)
     if (checkOutBook.Status == "on shelf")
     {
         Console.WriteLine($"You've checkout out {title}. The book is due {displayDate}");
+        checkOutBook.Status = "checked out";
+        Console.WriteLine();
     }
     else if (checkOutBook.Status == "checked out")
     {
         Console.WriteLine("Sorry, this book is currently checked out.");
+        Console.WriteLine();
     }
     else
     {
         Console.WriteLine("No book of this name in the library catalog");
+        Console.WriteLine();
     }
 }
 
@@ -109,17 +119,19 @@ static void SearchByAuthor(List<Book> bookList, string author)
 {
     Console.WriteLine("Please enter the author of the book:");
     author = Console.ReadLine();
-    foreach (var book in bookList)
+
+    var foundBooks = bookList.Where(x => x.Author == author.Trim());
+
+    if (foundBooks.Any())
     {
-        if (book.Title == author.ToLower().Trim())
+        foreach (Book book in foundBooks)
         {
-            Console.WriteLine(bookList.Where(x => x.Author == author.ToLower().Trim()));
+            Console.WriteLine($"{book.Title} by {book.Author}");
         }
-        else
-        {
-            Console.WriteLine("There are no books with that author in the library's database.");
-        }
-        
+    }
+    else
+    {
+        Console.WriteLine("There are no books with that author in the library's database.");
     }
 }
 
@@ -129,7 +141,21 @@ static void SearchByKeyword(List<Book> bookList, string keyword)
     Console.WriteLine("Please enter the keyword to search book titles:");
     keyword = Console.ReadLine();
 
-    foreach (var book in bookList)
+    var foundBooks = bookList.Where(x => x.Title.Contains(keyword.ToLower().Trim()));
+
+    if (foundBooks.Any())
+    {
+        foreach (Book book in foundBooks)
+        {
+            Console.WriteLine($"{book.Title} by {book.Author}");
+        }
+    }
+    else
+    {
+        Console.WriteLine("There are no books that contain that keyword in the library's database.");
+    }
+
+    /* foreach (var book in bookList)
     {
         if (book.Title.Contains(keyword))
         {
@@ -139,7 +165,7 @@ static void SearchByKeyword(List<Book> bookList, string keyword)
         {
             Console.WriteLine("There are no books that contain that keyword in the library's database.");
         }
-    }
+    } */
 }
 
 // Return a book. (You can decide how that looks/what questions it asks.)
@@ -148,9 +174,9 @@ static void ReturnBook(List<Book> bookList, string title, string displayDate)
     Console.WriteLine("Please enter the title of the book you'd like to return:");
     title = Console.ReadLine();
 
-    foreach (var book in bookList)
+    foreach (Book book in bookList)
     {
-        if (book.Title == title.ToLower().Trim())
+        if (book.Title == title.Trim())
         {
             Console.WriteLine(book.Title, book.Author, book.Status);
             if (book.Status == "on shelf")
@@ -160,16 +186,16 @@ static void ReturnBook(List<Book> bookList, string title, string displayDate)
             else if (book.Status == "checked out")
             {
                 book.Status = "on shelf";
-                Console.WriteLine($"You've returned out {title}.");
+                Console.WriteLine($"You've returned {title}.");
             }
             else
             {
                 Console.WriteLine("There are no books that contain that keyword in the library's database.");
             }
         }
-        else
+        /* else
         {
             Console.WriteLine("There are no books with that title in the library's database.");
-        }
+        } */
     }
 }

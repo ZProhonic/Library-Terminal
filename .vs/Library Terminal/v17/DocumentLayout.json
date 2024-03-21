@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\MattieD\\source\\repos\\Library-Terminal\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B965E2A0-AF26-4C38-BB38-977107C7FE69}|Library Terminal\\Library Terminal.csproj|c:\\users\\mattied\\source\\repos\\library-terminal\\library terminal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B965E2A0-AF26-4C38-BB38-977107C7FE69}|Library Terminal\\Library Terminal.csproj|solutionrelative:library terminal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B965E2A0-AF26-4C38-BB38-977107C7FE69}|Library Terminal\\Library Terminal.csproj|c:\\users\\mattied\\source\\repos\\library-terminal\\library terminal\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B965E2A0-AF26-4C38-BB38-977107C7FE69}|Library Terminal\\Library Terminal.csproj|solutionrelative:library terminal\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B965E2A0-AF26-4C38-BB38-977107C7FE69}|Library Terminal\\Library Terminal.csproj|c:\\users\\mattied\\source\\repos\\library-terminal\\library terminal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B965E2A0-AF26-4C38-BB38-977107C7FE69}|Library Terminal\\Library Terminal.csproj|solutionrelative:library terminal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,41 +18,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Book.cs",
               "DocumentMoniker": "C:\\Users\\MattieD\\source\\repos\\Library-Terminal\\Library Terminal\\Book.cs",
               "RelativeDocumentMoniker": "Library Terminal\\Book.cs",
               "ToolTip": "C:\\Users\\MattieD\\source\\repos\\Library-Terminal\\Library Terminal\\Book.cs",
               "RelativeToolTip": "Library Terminal\\Book.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABQAAAAJAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-14T23:24:58.228Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\MattieD\\source\\repos\\Library-Terminal\\Library Terminal\\Program.cs",
               "RelativeDocumentMoniker": "Library Terminal\\Program.cs",
               "ToolTip": "C:\\Users\\MattieD\\source\\repos\\Library-Terminal\\Library Terminal\\Program.cs",
               "RelativeToolTip": "Library Terminal\\Program.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAAADcAAAAtAAAA",
+              "ViewState": "AQIAAKwAAAAAAAAAAAAQwLIAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-14T23:24:58.272Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             }
           ]
         }
