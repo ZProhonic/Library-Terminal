@@ -51,23 +51,18 @@ while (true)
     switch (userSelection)
     {
         case 1:
-            //Working
             BookList(bookList);
             break;
         case 2:
-            //Working
             SearchByAuthor(bookList, author);
             break;
         case 3:
-            //Working
             SearchByKeyword(bookList, keyword);
             break;
         case 4:
-            //FIX ME
             ReturnBook(bookList, title, displayDate);
             break;
         case 5:
-            //Working
             CheckOutBook(bookList, displayDate);
             break;
         case 6:
